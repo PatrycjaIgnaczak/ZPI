@@ -23,9 +23,9 @@ namespace App1
         private double nonPrescriptedDrug;
         private double clothing;
 
-        public State() { }
+        public StateData() { }
 
-        public State(string name, 
+        public StateData(string name, 
             double groceries, 
             double preparedFood, 
             double prescriptionDrug, 
