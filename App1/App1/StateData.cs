@@ -58,5 +58,10 @@ namespace App1
                     throw new Exception();
             }
         }
+
+        public static StateData StateTax(State state)
+        {
+            return null;
+        }
     }
 }
