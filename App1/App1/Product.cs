@@ -8,7 +8,7 @@ namespace App1
 {
     class Product
     {
-        private const string name;
+        private string name;
         public string Name
         {
             get
@@ -16,7 +16,7 @@ namespace App1
                 return name;
             }
         }
-        private const ProductType type;
+        private ProductType type;
         private double price;
 
         public Product(string name, ProductType type, double price)
@@ -25,9 +25,9 @@ namespace App1
             this.type = type;
             this.price = price;
         }
-        public double PriceAfterTax(State state)
+        public double PriceAfterTax(StateData state)
         {
-            double tax = State.Tax(type) / 100;
+            double tax = state.Tax(type) / 100;
             return price * (1 + tax);
         }
         public double PriceAfterDiscount()
