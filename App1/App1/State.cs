@@ -6,56 +6,60 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    class State
+    enum State
     {
-        private string name;
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-        }
-        private double groceries;
-        private double preparedFood;
-        private double prescriptionDrug;
-        private double nonPrescriptedDrug;
-        private double clothing;
-
-        public State() { }
-
-        public State(string name, 
-            double groceries, 
-            double preparedFood, 
-            double prescriptionDrug, 
-            double nonPrescriptedDrug, 
-            double clothing)
-        {
-            this.name = name;
-            this.groceries = groceries;
-            this.preparedFood = preparedFood;
-            this.prescriptionDrug = prescriptionDrug;
-            this.nonPrescriptedDrug = nonPrescriptedDrug;
-            this.clothing = clothing;
-        }
-
-        public double Tax(ProductType type)
-        {
-            switch (type)
-            {
-                case ProductType.Clothing:
-                    return clothing;
-                case ProductType.Groceries:
-                    return groceries;
-                case ProductType.NonPrescriptionDrug:
-                    return nonPrescriptedDrug;
-                case ProductType.PreparedFood:
-                    return preparedFood;
-                case ProductType.PrescriptionDrug:
-                    return prescriptionDrug;
-                default:
-                    throw new Exception();
-            }
-        }
+        Alabama,
+        Alaska,
+        Arizona,
+        Arkansas,
+        California,
+        Colorado,
+        Connecticut,
+        Delaware,
+        DistrictOfColumbia,
+        Florida,
+        Georgia,
+        Guam,
+        Hawaii,
+        Idaho,
+        Illinois,
+        Indiana,
+        Iowa,
+        Kansas,
+        Kentucky,
+        Louisiana,
+        Maine,
+        Maryland,
+        Massachusetts,
+        Michigan,
+        Minnesota,
+        Mississippi,
+        Missouri,
+        Montana,
+        Nebraska,
+        Nevada,
+        NewHampshire,
+        NewJersey,
+        NewMexico,
+        NewYork,
+        NorthCarolina,
+        NorthDakota,
+        Ohio,
+        Oklahoma,
+        Oregon,
+        Pennsylvania,
+        PuertoRico,
+        RhodeIsland,
+        SouthCarolina,
+        SouthDakota,
+        Tennessee,
+        Texas,
+        Utah,
+        Vermont,
+        Virginia,
+        Washington,
+        WestVirginia,
+        Wisconsin,
+        Wyoming
     }
 }
