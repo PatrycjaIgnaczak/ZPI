@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    enum State
+    public enum State
     {
         Alabama,
         Alaska,
