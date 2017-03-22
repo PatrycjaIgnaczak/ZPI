@@ -22,6 +22,23 @@ namespace App1
         private double nonPrescriptedDrug;
         private double clothing;
 
+        public State() { }
+
+        public State(string name, 
+            double groceries, 
+            double preparedFood, 
+            double prescriptionDrug, 
+            double nonPrescriptedDrug, 
+            double clothing)
+        {
+            this.name = name;
+            this.groceries = groceries;
+            this.preparedFood = preparedFood;
+            this.prescriptionDrug = prescriptionDrug;
+            this.nonPrescriptedDrug = nonPrescriptedDrug;
+            this.clothing = clothing;
+        }
+
         public double Tax(ProductType type)
         {
             switch (type)
