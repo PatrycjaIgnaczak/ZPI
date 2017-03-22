@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    enum ProductType
+    public enum ProductType
     {
         Groceries, PreparedFood, PrescriptionDrug, NonPrescriptionDrug, Clothing
     }

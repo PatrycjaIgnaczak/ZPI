@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    class StateData
+    public class StateData
     {
         
         private string name;
