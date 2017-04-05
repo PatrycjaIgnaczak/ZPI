@@ -29,7 +29,7 @@ namespace App1
             stateNames = StateData.getStateNames();
             for (int i = 0; i < stateNames.Count; i++)
             {
-                ComboboxItem item = new ComboboxItem();
+                StateComboBoxItem item = new StateComboBoxItem();
                 item.Text = stateNames[i];
                 item.Value = (State)i;
                 inputChoice1.Items.Add(item);
@@ -39,7 +39,7 @@ namespace App1
 
         private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            textOutput1.Text = ((ComboboxItem)inputChoice1.SelectedItem).Value.ToString();
+            textOutput1.Text = ((StateComboBoxItem)inputChoice1.SelectedItem).Value.ToString();
         }
     }
 }
