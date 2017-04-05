@@ -39,7 +39,7 @@ namespace App1
 
         private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            textOutput1.Text = ((ComboboxItem)inputChoice1.SelectedItem).Value.ToString();
         }
     }
 }
