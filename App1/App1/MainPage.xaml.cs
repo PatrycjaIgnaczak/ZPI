@@ -24,7 +24,21 @@ namespace App1
     {
         public MainPage()
         {
+            List<String> stateNames = new List<String>();
+            stateNames = StateData.getStateNames();
+            for(int i = 0; i < stateNames.Count; i++)
+            {
+                ComboboxItem item = new ComboboxItem();
+                item.Text = stateNames[i];
+                item.Value = (State)i;
+            }
             this.InitializeComponent();
+        }
+
+        private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            String value = (inputChoice1.SelectedItem as ComboBoxItem).Content.ToString();
+            textOutput1.Text = value;
         }
     }
 }
