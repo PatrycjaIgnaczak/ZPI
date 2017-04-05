@@ -17,6 +17,14 @@ namespace App1
             }
         }
         private ProductType type;
+
+        public ProductType Type
+        {
+            get
+            {
+                return type;
+            }
+        }
         private double price;
 
         public double Price
@@ -42,9 +50,9 @@ namespace App1
             double tax = state.Tax(type) / 100;
             return price * (1 + tax);
         }
-        public double PriceAfterDiscount(double discount)
+        public double PriceAfterDiscount(double discount, StateData state)
         {
-            return price - discount;
+            return PriceAfterTax(state) - discount;
         }
     }
 }
