@@ -29,17 +29,17 @@ namespace App1
             stateNames = StateData.getStateNames();
             for (int i = 0; i < stateNames.Count; i++)
             {
-                ComboboxItem item = new ComboboxItem();
+                StateComboBoxItem item = new StateComboBoxItem();
                 item.Text = stateNames[i];
                 item.Value = (State)i;
                 inputChoice1.Items.Add(item);
             }
+            inputChoice1.SelectedIndex = 0;
         }
 
         private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            String value = (inputChoice1.SelectedItem as ComboBoxItem).Content.ToString();
-            textOutput1.Text = value;
+            textOutput1.Text = ((StateComboBoxItem)inputChoice1.SelectedItem).Value.ToString();
         }
     }
 }
