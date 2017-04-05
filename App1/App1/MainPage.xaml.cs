@@ -25,16 +25,25 @@ namespace App1
         public MainPage()
         {
             this.InitializeComponent();
-            List<String> stateNames = new List<String>();
-            stateNames = StateData.getStateNames();
-            for (int i = 0; i < stateNames.Count; i++)
+            List<String> stateInfo = new List<String>();
+            stateInfo = StateData.getStateNames();
+            for (int i = 0; i < stateInfo.Count; i++)
             {
                 StateComboBoxItem item = new StateComboBoxItem();
-                item.Text = stateNames[i];
+                item.Text = stateInfo[i];
                 item.Value = (State)i;
                 inputChoice1.Items.Add(item);
             }
             inputChoice1.SelectedIndex = 0;
+
+            for (int i = 0; i < stateInfo.Count; i++)
+            {
+                Produc item = new StateComboBoxItem();
+                item.Text = stateInfo[i];
+                item.Value = (State)i;
+                inputChoice2.Items.Add(item);
+            }
+            inputChoice2.SelectedIndex = 0;
         }
 
         private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
