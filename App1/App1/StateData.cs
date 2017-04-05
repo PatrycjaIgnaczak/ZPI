@@ -10,7 +10,7 @@ namespace App1
     {
         private static Dictionary<State, StateData> states = new Dictionary<State, StateData>
         {
-
+            { State.Alabama, new StateData("Alabama", 13.5f, 13.5f, 0, 13.5f, 13.5f) }
         };
 
         public static StateData info(State state)
