@@ -13,6 +13,11 @@ namespace App1
             { State.Alabama, new StateData("Alabama", 13.5f, 13.5f, 0, 13.5f, 13.5f) }
         };
 
+        public static List<string> getStateNames()
+        {
+            return states.Values.Select<StateData, string>(state => state.Name).ToList();
+        }
+
         public static StateData info(State state)
         {
             return states[state];
