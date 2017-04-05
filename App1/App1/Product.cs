@@ -8,6 +8,18 @@ namespace App1
 {
     class Product
     {
+        public static List<Product> products = new List<Product>
+        {
+            { new Product("Banana", ProductType.Groceries, 1) },
+            { new Product("Cheese", ProductType.Groceries, 5) },
+            { new Product("Vicodin", ProductType.PrescriptionDrug, 11) },
+            { new Product("Valium", ProductType.PrescriptionDrug, 15) },
+            { new Product("Tylenol", ProductType.NonPrescriptionDrug, 10) },
+             { new Product("Claritin", ProductType.NonPrescriptionDrug, 15) },
+            { new Product("Jeans", ProductType.Clothing, 20) },
+            { new Product("Shoes", ProductType.Clothing, 30) }
+        };
+
         private string name;
         public string Name
         {
