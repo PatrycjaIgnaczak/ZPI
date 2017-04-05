@@ -8,7 +8,11 @@ namespace App1
 {
     public class StateData
     {
-        
+        private static Dictionary<State, StateData> states = new Dictionary<State, StateData>
+        {
+
+        };
+
         private string name;
         public string Name
         {
