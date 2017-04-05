@@ -13,6 +13,11 @@ namespace App1
 
         };
 
+        public static StateData info(State state)
+        {
+            return states[state];
+        }
+
         private string name;
         public string Name
         {
