@@ -34,12 +34,12 @@ namespace App1
                 item.Value = (State)i;
                 inputChoice1.Items.Add(item);
             }
+            inputChoice1.SelectedIndex = 0;
         }
 
         private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            String value = (inputChoice1.SelectedItem as ComboBoxItem).Content.ToString();
-            textOutput1.Text = value;
+            
         }
     }
 }
