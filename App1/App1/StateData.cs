@@ -10,14 +10,18 @@ namespace App1
     {
         private static Dictionary<State, StateData> states = new Dictionary<State, StateData>
         {
-            { State.Alabama, new StateData("Alabama", 13.5f, 13.5f, 4, 13.5f, 13.5f) },
-            { State.Alaska, new StateData("Alaska", 0, 0, 0, 0, 0) },
-            { State.Arizona, new StateData("Arizona", 5.6f, 10.725f, 5.6f, 10.725f, 10.725f) },
-            { State.Arkansas, new StateData("Arkansas", 11.625f, 11.625f, 6.5f, 11.625f, 11.625f ) },
-            { State.California, new StateData("California", 7.25F, 9.75f, 7.25F, 9.75f, 9.75f) },
-          
-                   
-        };
+            { State.Alabama,            new StateData("Alabama", 13.5f, 13.5f, 4, 13.5f, 13.5f) },
+            { State.Alaska,             new StateData("Alaska", 0, 0, 0, 0, 0) },
+            { State.Arizona,            new StateData("Arizona", 5.6f, 10.725f, 5.6f, 10.725f, 10.725f) },
+            { State.Arkansas,           new StateData("Arkansas", 11.625f, 11.625f, 6.5f, 11.625f, 11.625f ) },
+            { State.California,         new StateData("California", 7.25F, 9.75f, 7.25F, 9.75f, 9.75f) },
+            { State.Colorado,           new StateData("Colorado", 2.9f, 10, 2.9f, 10, 2.9f) },
+            { State.Connecticut,        new StateData("Connecticut", 6.35f, 6.35f, 6.35f, 6.35f, 6.35f) },
+            { State.Delaware,           new StateData("Delaware", 0, 0, 0, 0, 0) },
+            { State.DistrictOfColumbia, new StateData("DistrictOfColumbia", 5.75f, 5.75f, 5.75f, 5.75f, 5.75f) },
+            { State.Florida,            new StateData("Florida", 6, 7.5f, 6, 7.5f, 7.5f) },
+
+          };
 
         public static List<string> getStateNames()
         {
