@@ -35,21 +35,12 @@ namespace App1
                 inputChoice1.Items.Add(item);
             }
             inputChoice1.SelectedIndex = 0;
-            /*
+
             for (int i = 0; i < stateInfo.Count; i++)
             {
-                Product item = new StateComboBoxItem();
-                item.Text = stateInfo[i];
-                item.Value = (State)i;
-                inputChoice2.Items.Add(item
-
+                listView.Items.Add(stateInfo[i]);
             }
-            inputChoice2.SelectedIndex = 0;*/
-        }
-
-        private void inputChoice1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
+            
         }
     }
 }
