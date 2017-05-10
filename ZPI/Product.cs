@@ -5,6 +5,17 @@ namespace App1
 {
     class Product
     {
+        public static List<Product> products = new List<Product>
+        {
+            new Product("Banana", ProductType.Groceries, 1),
+            new Product("Cheese", ProductType.Groceries, 5),
+            new Product("Vicodin", ProductType.PrescriptionDrug, 11),
+            new Product("Valium", ProductType.PrescriptionDrug, 15),
+            new Product("Tylenol", ProductType.NonPrescriptionDrug, 10),
+            new Product("Claritin", ProductType.NonPrescriptionDrug, 15),
+            new Product("Jeans", ProductType.Clothing, 20),
+            new Product("Shoes", ProductType.Clothing, 30)
+        };
 
         public static Dictionary<ProductType, string> productTypeStrings = new Dictionary<ProductType, string>()
         {
@@ -14,6 +25,7 @@ namespace App1
             { ProductType.NonPrescriptionDrug, "Non-prescription drug" },
             { ProductType.Clothing, "Clothing" }
         };
+
         private string name;
         public string Name
         {
@@ -22,8 +34,8 @@ namespace App1
                 return name;
             }
         }
-        private ProductType type;
 
+        private ProductType type;
         public ProductType Type
         {
             get
@@ -31,8 +43,8 @@ namespace App1
                 return type;
             }
         }
-        private double price;
 
+        private double price;
         public double Price
         {
             get
@@ -63,6 +75,7 @@ namespace App1
             double tax = state.Tax(type) / 100;
             return price / (1 + tax);
         }
+
         public double PriceAfterDiscount(double discount, StateData state)
         {
             return PriceAfterTax(state) - discount;
