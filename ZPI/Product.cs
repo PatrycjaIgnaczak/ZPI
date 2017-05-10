@@ -1,7 +1,7 @@
 ﻿
 using System.Collections.Generic;
 
-namespace App1
+namespace ZPI
 {
     class Product
     {
