@@ -1,8 +1,19 @@
 ﻿
+using System.Collections.Generic;
+
 namespace App1
 {
     class Product
     {
+
+        public static Dictionary<ProductType, string> productTypeStrings = new Dictionary<ProductType, string>()
+        {
+            { ProductType.Groceries, "Groceries" },
+            { ProductType.PreparedFood, "Prepared food" },
+            { ProductType.PrescriptionDrug, "Prescription drug" },
+            { ProductType.NonPrescriptionDrug, "Non-prescription drug" },
+            { ProductType.Clothing, "Clothing" }
+        };
         private string name;
         public string Name
         {
