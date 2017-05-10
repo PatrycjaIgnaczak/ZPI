@@ -27,7 +27,7 @@ namespace ZPI
             List<String> stateNames = new List<String>();
             stateNames = StateData.getStateNames();
 
-
+            listView.Items.Add(new TableItem { State = "Test", AfterTaxation = 100.00, MarkUp = 1});
         }
     }
 }

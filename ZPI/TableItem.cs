@@ -8,10 +8,10 @@ namespace ZPI
 {
     class TableItem
     {
-        public string State;
+        public string State { get; set; }
 
-        public double AfterTaxation;
+        public double AfterTaxation { get; set; }
 
-        public double MarkUp;
+        public double MarkUp { get; set; }
     }
 }
