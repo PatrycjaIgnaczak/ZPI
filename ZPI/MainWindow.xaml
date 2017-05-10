@@ -14,7 +14,7 @@
                 <GridView AllowsColumnReorder="False">
                     <GridViewColumn Header="State" DisplayMemberBinding="{Binding State}"/>
                     <GridViewColumn Header="Price after taxation" DisplayMemberBinding="{Binding AfterTaxation}"/>
-                    <GridViewColumn Header="Mark-Up" DisplayMemberBinding="{Binding Margin}"/>
+                    <GridViewColumn Header="Mark-Up" DisplayMemberBinding="{Binding MarkUp}"/>
                 </GridView>
             </ListView.View>
         </ListView>
