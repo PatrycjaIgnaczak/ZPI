@@ -7,14 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <ComboBox x:Name="chooseProductType" HorizontalAlignment="Left" Margin="40,83,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="inputPrice" HorizontalAlignment="Left" Height="23" Margin="40,159,0,0" TextWrapping="Wrap" Text="price" VerticalAlignment="Top" Width="120"/>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="268" Margin="206,22,0,0" VerticalAlignment="Top" Width="283">
+        <ComboBox x:Name="chooseProductType" HorizontalAlignment="Left" Margin="40,22,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputPriceBase" HorizontalAlignment="Left" Height="23" Margin="40,74,0,0" TextWrapping="Wrap" Text="cena bazowa" VerticalAlignment="Top" Width="120"/>
+        <ListView x:Name="listView" Margin="206,22,28,29">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <ComboBox x:Name="chooseProductFromList" HorizontalAlignment="Left" Margin="40,121,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="inputPriceEnd" HorizontalAlignment="Left" Height="23" Margin="40,0,0,61" TextWrapping="Wrap" Text="cena koncowa" VerticalAlignment="Bottom" Width="120"/>
+        <Button x:Name="submit" Content="Zatwierdz" HorizontalAlignment="Left" Margin="40,0,0,19" Width="120" Height="20" VerticalAlignment="Bottom"/>
     </Grid>
 </Window>
