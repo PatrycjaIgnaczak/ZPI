@@ -57,6 +57,19 @@ namespace App1
             }
         }
 
+        private double endPrice;
+        private double EndPrice
+        {
+            get
+            {
+                return endPrice;
+            }
+            set
+            {
+                endPrice = EndPrice;
+            }
+        }
+
         public Product(string name, ProductType type, double price)
         {
             this.name = name;
@@ -74,6 +87,12 @@ namespace App1
         {
             double tax = state.Tax(type) / 100;
             return price / (1 + tax);
+        }
+
+        public double MarkUp(StateData state)
+        {
+            return PriceAfterTax(state) - endPrice;
+             
         }
 
         public double PriceAfterDiscount(double discount, StateData state)

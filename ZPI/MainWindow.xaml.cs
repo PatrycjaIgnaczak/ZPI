@@ -27,6 +27,15 @@ namespace ZPI
             List<String> stateNames = new List<String>();
             stateNames = StateData.getStateNames();
 
+            for (int i = 0; i < Product.productTypeStrings.Count; i++)
+            {
+                ProductTypeComboBoxItem item = new ProductTypeComboBoxItem();
+                item.Text = Product.productTypeStrings[(ProductType)i];
+                item.Value = (ProductType)i;
+                chooseProductType.Items.Add(item);
+            }
+            chooseProductType.SelectedIndex = 0;
+
             listView.Items.Add(new TableItem { State = "Test", AfterTaxation = 100.00, MarkUp = 1});
         }
     }
