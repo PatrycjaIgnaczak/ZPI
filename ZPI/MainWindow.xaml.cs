@@ -36,7 +36,11 @@ namespace ZPI
             }
             chooseProductType.SelectedIndex = 0;
 
-            listView.Items.Add(new TableItem { State = "Test", AfterTaxation = 100.00, MarkUp = 1});
+            for(int i = 0; i < stateNames.Count; i++)
+            {
+                listView.Items.Add(new TableItem { State = stateNames[i] , AfterTaxation = 100.00, MarkUp = 1});
+            }
+            
         }
 
         private void chooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
