@@ -9,6 +9,7 @@ namespace ZPI
         {
             new Product("Banana", ProductType.Groceries, 1),
             new Product("Cheese", ProductType.Groceries, 5),
+            new Product("Pizza", ProductType.PreparedFood, 15),
             new Product("Vicodin", ProductType.PrescriptionDrug, 11),
             new Product("Valium", ProductType.PrescriptionDrug, 15),
             new Product("Tylenol", ProductType.NonPrescriptionDrug, 10),
@@ -92,7 +93,7 @@ namespace ZPI
         public double MarkUp(StateData state)
         {
             return PriceAfterTax(state) - endPrice;
-             
+
         }
 
         public double PriceAfterDiscount(double discount, StateData state)
