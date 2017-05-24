@@ -20,6 +20,7 @@ namespace ZPI
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -36,6 +37,28 @@ namespace ZPI
             chooseProductType.SelectedIndex = 0;
 
             listView.Items.Add(new TableItem { State = "Test", AfterTaxation = 100.00, MarkUp = 1});
+        }
+
+        private void chooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            chooseProductFromList.Items.Clear();
+            List<String> prod = new List<String>();
+            for (int i = 0; i < Product.products.Count; i++)
+            {
+                if (Product.products[i].Type == (ProductType)chooseProductType.SelectedIndex)
+                {
+                    prod.Add(Product.products[i].Name);
+                }
+            }
+
+            for (int i = 0; i < prod.Count; i++)
+            {
+                ProductComboBoxItem item = new ProductComboBoxItem();
+                item.Text = prod[i];
+                item.Value = i;
+                chooseProductFromList.Items.Add(item);
+            }
+            chooseProductFromList.SelectedIndex = 0;
         }
     }
 }
