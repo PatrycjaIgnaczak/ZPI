@@ -24,8 +24,8 @@ namespace ZPI
         public MainWindow()
         {
             InitializeComponent();
-            
-            
+
+
 
             foreach (var pType in Product.productTypeStrings)
             {
@@ -36,7 +36,7 @@ namespace ZPI
             }
             chooseProductType.SelectedIndex = 0;
 
-            
+
         }
 
         private void ChooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -56,26 +56,26 @@ namespace ZPI
 
         private void PriceBaseGotFocus(object sender, RoutedEventArgs e)
         {
-            if (inputPriceBase.Text == "cena bazowa")
+            if (inputPriceBase.Text == "price without taxes")
                 inputPriceBase.Text = "";
         }
 
         private void PriceEndGotFocus(object sender, RoutedEventArgs e)
         {
-            if (inputPriceEnd.Text == "cena koncowa")
+            if (inputPriceEnd.Text == "end price")
                 inputPriceEnd.Text = "";
         }
 
         private void PriceBaseLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceBase.Text.Replace(" ", "") == "")
-                inputPriceBase.Text = "cena bazowa";
+                inputPriceBase.Text = "price without taxes";
         }
 
         private void PriceEndLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceEnd.Text.Replace(" ", "") == "")
-                inputPriceEnd.Text = "cena koncowa";
+                inputPriceEnd.Text = "end price";
         }
 
         private void ExampleProductSelectionChanged(object sender, SelectionChangedEventArgs e)
