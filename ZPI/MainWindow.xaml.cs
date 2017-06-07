@@ -103,7 +103,11 @@ namespace ZPI
             for (int i = 0; i < stateNames.Count; i++)
             {
                 priceAfterTax = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.PriceAfterTax(StateData.info((State)i));
-                difference = priceAfterTax - ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price;
+                if(!inputPriceEnd.Text.Equals("end price"))
+                {
+                    difference = Convert.ToDouble(inputPriceEnd.Text) - priceAfterTax;
+                }
+                Console.WriteLine(difference);
                 listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = priceAfterTax, MarkUp = difference });
             }
         }
