@@ -9,7 +9,7 @@ namespace ZPI
     class ProductComboBoxItem
     {
         public string Text { get; set; }
-        public int Value { get; set; }
+        public Product Value { get; set; }
 
         public override string ToString()
         {

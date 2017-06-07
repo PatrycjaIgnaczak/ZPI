@@ -27,12 +27,12 @@ namespace ZPI
             List<String> stateNames = new List<String>();
             stateNames = StateData.getStateNames();
 
-            for (int i = 0; i < Product.productTypeStrings.Count; i++)
+            foreach (var pType in Product.productTypeStrings)
             {
-                ProductTypeComboBoxItem item = new ProductTypeComboBoxItem();
-                item.Text = Product.productTypeStrings[(ProductType)i];
-                item.Value = (ProductType)i;
-                chooseProductType.Items.Add(item);
+                chooseProductType.Items.Add(new ProductTypeComboBoxItem() {
+                    Text = pType.Value,
+                    Value = pType.Key
+                });
             }
             chooseProductType.SelectedIndex = 0;
 
@@ -40,53 +40,55 @@ namespace ZPI
             {
                 listView.Items.Add(new TableItem { State = stateNames[i] , AfterTaxation = 100.00, MarkUp = 1});
             }
-            
         }
 
-        private void chooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ChooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             chooseProductFromList.Items.Clear();
-            List<String> prod = new List<String>();
-            for (int i = 0; i < Product.products.Count; i++)
+
+            foreach (var product in Product.products.Where(product => product.Type.Equals(((ProductTypeComboBoxItem)chooseProductType.SelectedValue).Value)))
             {
-                if (Product.products[i].Type == (ProductType)chooseProductType.SelectedIndex)
+                chooseProductFromList.Items.Add(new ProductComboBoxItem()
                 {
-                    prod.Add(Product.products[i].Name);
-                }
+                    Text = product.Name,
+                    Value = product
+                });
             }
 
-            for (int i = 0; i < prod.Count; i++)
-            {
-                ProductComboBoxItem item = new ProductComboBoxItem();
-                item.Text = prod[i];
-                item.Value = i;
-                chooseProductFromList.Items.Add(item);
-            }
             chooseProductFromList.SelectedIndex = 0;
         }
 
-        private void priceBaseGotFocus(object sender, RoutedEventArgs e)
+        private void PriceBaseGotFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceBase.Text == "cena bazowa")
                 inputPriceBase.Text = "";
         }
 
-        private void priceEndGotFocus(object sender, RoutedEventArgs e)
+        private void PriceEndGotFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceEnd.Text == "cena koncowa")
                 inputPriceEnd.Text = "";
         }
 
-        private void priceBaseLostFocus(object sender, RoutedEventArgs e)
+        private void PriceBaseLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceBase.Text.Replace(" ", "") == "")
                 inputPriceBase.Text = "cena bazowa";
         }
 
-        private void priceEndLostFocus(object sender, RoutedEventArgs e)
+        private void PriceEndLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceEnd.Text.Replace(" ", "") == "")
                 inputPriceEnd.Text = "cena koncowa";
+        }
+
+        private void ExampleProductSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                inputPriceBase.Text = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price.ToString();
+            }
+            catch (Exception) { };
         }
     }
 }
