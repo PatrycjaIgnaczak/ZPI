@@ -8,7 +8,7 @@ script:
   - xbuild ./ZPI.sln
   - nunit-console ./src/SomeLibrary.Tests/bin/Debug/SomeLibrary.Tests.dll
   
- deploy:
+deploy:
   provider: pages
   skip_cleanup: true
   github_token: e02dc264a8c421620c4bb757dd2ab8f46603fd8c # Set in travis-ci.org dashboard
