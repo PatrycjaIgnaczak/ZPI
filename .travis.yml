@@ -1,6 +1,7 @@
 language: csharp
 solution: ./ZPI.sln
 install:
+  - sudo apt-get update
   - sudo apt-get install -y gtk-sharp2
   - nuget restore ./ZPI.sln
 
