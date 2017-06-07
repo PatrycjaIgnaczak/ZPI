@@ -9,8 +9,8 @@
     <Grid>
         <ComboBox x:Name="chooseProductType" HorizontalAlignment="Left" Margin="40,22,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="chooseProductType_SelectionChanged"/>
         <ComboBox x:Name="chooseProductFromList" HorizontalAlignment="Left" Margin="40,60,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="inputPriceBase" HorizontalAlignment="Left" Height="23" Margin="40,0,0,98" TextWrapping="Wrap" Text="cena bazowa" VerticalAlignment="Bottom" Width="120" FontStyle="Italic"/>
-        <TextBox x:Name="inputPriceEnd" HorizontalAlignment="Left" Height="23" Margin="40,0,0,60" TextWrapping="Wrap" Text="cena koncowa" VerticalAlignment="Bottom" Width="120" FontStyle="Italic"/>
+        <TextBox x:Name="inputPriceBase" HorizontalAlignment="Left" Height="23" Margin="40,0,0,98" TextWrapping="Wrap" Text="cena bazowa" VerticalAlignment="Bottom" Width="120" FontStyle="Italic" GotFocus="priceBaseGotFocus" LostFocus="priceBaseLostFocus"/>
+        <TextBox x:Name="inputPriceEnd" HorizontalAlignment="Left" Height="23" Margin="40,0,0,60" TextWrapping="Wrap" Text="cena koncowa" VerticalAlignment="Bottom" Width="120" FontStyle="Italic" GotFocus="priceEndGotFocus" LostFocus="priceEndLostFocus"/>
         <Button x:Name="submit" Content="Zatwierdz" HorizontalAlignment="Left" Margin="40,0,0,19" Width="120" Height="20" VerticalAlignment="Bottom"/>
         <ListView x:Name="listView" Margin="206,22,28,29" Grid.Column="3">
             <ListView.View>

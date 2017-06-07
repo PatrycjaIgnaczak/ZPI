@@ -64,5 +64,29 @@ namespace ZPI
             }
             chooseProductFromList.SelectedIndex = 0;
         }
+
+        private void priceBaseGotFocus(object sender, RoutedEventArgs e)
+        {
+            if (inputPriceBase.Text == "cena bazowa")
+                inputPriceBase.Text = "";
+        }
+
+        private void priceEndGotFocus(object sender, RoutedEventArgs e)
+        {
+            if (inputPriceEnd.Text == "cena koncowa")
+                inputPriceEnd.Text = "";
+        }
+
+        private void priceBaseLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (inputPriceBase.Text.Replace(" ", "") == "")
+                inputPriceBase.Text = "cena bazowa";
+        }
+
+        private void priceEndLostFocus(object sender, RoutedEventArgs e)
+        {
+            if (inputPriceEnd.Text.Replace(" ", "") == "")
+                inputPriceEnd.Text = "cena koncowa";
+        }
     }
 }
