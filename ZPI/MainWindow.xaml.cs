@@ -24,8 +24,8 @@ namespace ZPI
         public MainWindow()
         {
             InitializeComponent();
-            List<String> stateNames = new List<String>();
-            stateNames = StateData.getStateNames();
+            
+            
 
             foreach (var pType in Product.productTypeStrings)
             {
@@ -36,10 +36,7 @@ namespace ZPI
             }
             chooseProductType.SelectedIndex = 0;
 
-            for(int i = 0; i < stateNames.Count; i++)
-            {
-                listView.Items.Add(new TableItem { State = stateNames[i] , AfterTaxation = 100.00, MarkUp = 1});
-            }
+            
         }
 
         private void ChooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -89,6 +86,17 @@ namespace ZPI
                 inputPriceBase.Text = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price.ToString();
             }
             catch (Exception) { };
+        }
+
+        private void submit_Click(object sender, RoutedEventArgs e)
+        {
+            listView.Items.Clear();
+            List<String> stateNames = new List<String>();
+            stateNames = StateData.getStateNames();
+            for (int i = 0; i < stateNames.Count; i++)
+            {
+                listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = 100.00, MarkUp = 1 });
+            }
         }
     }
 }
