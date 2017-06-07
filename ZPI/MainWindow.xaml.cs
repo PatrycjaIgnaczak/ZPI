@@ -51,7 +51,6 @@ namespace ZPI
                     Value = product
                 });
             }
-
             chooseProductFromList.SelectedIndex = 0;
         }
 
@@ -84,18 +83,28 @@ namespace ZPI
             try
             {
                 inputPriceBase.Text = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price.ToString();
+                fillTextView();
             }
             catch (Exception) { };
         }
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
+            fillTextView();
+        }
+
+        private void fillTextView()
+        {
             listView.Items.Clear();
+            Double priceAfterTax = 0.0;
+            Double difference = 0.0;
             List<String> stateNames = new List<String>();
             stateNames = StateData.getStateNames();
             for (int i = 0; i < stateNames.Count; i++)
             {
-                listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = 100.00, MarkUp = 1 });
+                priceAfterTax = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.PriceAfterTax(StateData.info((State)i));
+                difference = priceAfterTax - ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price;
+                listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = priceAfterTax, MarkUp = difference });
             }
         }
     }
