@@ -2,7 +2,7 @@ language: csharp
 solution: ./ZPI.sln
 install:
   - sudo apt-get install nunit-console
-  - sudo apt-get install -y gtk-sharp2
+  - sudo apt-get install -y gtk-sharp2 gtk-sharp2-examples libglade2.0-cil-dev libgtk2.0-cil-dev
   - nuget restore ./ZPI.sln
 
 script:
