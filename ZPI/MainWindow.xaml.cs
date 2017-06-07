@@ -107,10 +107,6 @@ namespace ZPI
                 {
                     difference = Convert.ToDouble(inputPriceEnd.Text) - priceAfterTax;
                 }
-                else
-                {
-                    difference = 0.0;
-                }
                 Console.WriteLine(difference);
                 listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = priceAfterTax, MarkUp = difference });
             }
