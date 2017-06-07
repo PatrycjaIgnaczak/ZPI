@@ -24,8 +24,8 @@ namespace ZPI
         public MainWindow()
         {
             InitializeComponent();
-            
-            
+
+
 
             foreach (var pType in Product.productTypeStrings)
             {
@@ -36,7 +36,7 @@ namespace ZPI
             }
             chooseProductType.SelectedIndex = 0;
 
-            
+
         }
 
         private void ChooseProductType_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -51,32 +51,31 @@ namespace ZPI
                     Value = product
                 });
             }
-
             chooseProductFromList.SelectedIndex = 0;
         }
 
         private void PriceBaseGotFocus(object sender, RoutedEventArgs e)
         {
-            if (inputPriceBase.Text == "cena bazowa")
+            if (inputPriceBase.Text == "price without taxes")
                 inputPriceBase.Text = "";
         }
 
         private void PriceEndGotFocus(object sender, RoutedEventArgs e)
         {
-            if (inputPriceEnd.Text == "cena koncowa")
+            if (inputPriceEnd.Text == "end price")
                 inputPriceEnd.Text = "";
         }
 
         private void PriceBaseLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceBase.Text.Replace(" ", "") == "")
-                inputPriceBase.Text = "cena bazowa";
+                inputPriceBase.Text = "price without taxes";
         }
 
         private void PriceEndLostFocus(object sender, RoutedEventArgs e)
         {
             if (inputPriceEnd.Text.Replace(" ", "") == "")
-                inputPriceEnd.Text = "cena koncowa";
+                inputPriceEnd.Text = "end price";
         }
 
         private void ExampleProductSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -84,18 +83,28 @@ namespace ZPI
             try
             {
                 inputPriceBase.Text = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price.ToString();
+                fillTextView();
             }
             catch (Exception) { };
         }
 
         private void submit_Click(object sender, RoutedEventArgs e)
         {
+            fillTextView();
+        }
+
+        private void fillTextView()
+        {
             listView.Items.Clear();
+            Double priceAfterTax = 0.0;
+            Double difference = 0.0;
             List<String> stateNames = new List<String>();
             stateNames = StateData.getStateNames();
             for (int i = 0; i < stateNames.Count; i++)
             {
-                listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = 100.00, MarkUp = 1 });
+                priceAfterTax = ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.PriceAfterTax(StateData.info((State)i));
+                difference = priceAfterTax - ((ProductComboBoxItem)chooseProductFromList.SelectedItem).Value.Price;
+                listView.Items.Add(new TableItem { State = stateNames[i], AfterTaxation = priceAfterTax, MarkUp = difference });
             }
         }
     }
