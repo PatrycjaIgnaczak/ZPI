@@ -1,1 +1,11 @@
 language: c#
+solution: ./ZPI.sln
+install:
+  - sudo apt-get install nunit-console
+  - nuget restore ./src/yoursolution.sln
+
+script:
+  - xbuild ./src/yoursolution.sln
+  - nunit-console ./src/SomeLibrary.Tests/bin/Debug/SomeLibrary.Tests.dll
+  
+ 
